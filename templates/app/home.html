@@ -1,0 +1,48 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/app/home.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="section">
+
+  <div class="row top">
+    <a href="#" class="three">
+      Skills
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <a href="#" class="two">
+        Contact
+      </a>
+      <a href="#" class="one">
+        gggggg
+      </a>
+    </div>
+    <img src="{% static 'img/circle-person.png' %}" alt="" class="img">
+    <div class="column">
+      <a href="#" class="four">
+        Projects
+      </a>
+      <a href="#" class="five">
+        About me
+      </a>
+
+    </div>
+  </div>
+
+  <div class="full-name">
+    Eisa Nahardani
+  </div>
+
+  
+
+
+</div>
+{% endblock content %}

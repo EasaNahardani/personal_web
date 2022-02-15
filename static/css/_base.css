@@ -1,0 +1,28 @@
+html , body {
+  background-color: #1ab4b4;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.lang-switcher{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  margin: 0;
+  padding: 2px;
+}
+
+.lang-switcher li{
+  display: inline-block;
+  margin-right: 14px;
+}
+
+
+
+.lang-switcher li.other{
+  display: none;
+  transition: all 1s ease;
+}
+.lang-switcher:hover li.other{
+  display: inline-block;
+}

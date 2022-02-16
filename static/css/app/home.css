@@ -6,55 +6,62 @@ body{
 }
 
 .section  a{
-  z-index: 1;
+  color: #6b4334;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content:center;
   background-color: #77dad1;
-  width: 100%;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   text-align: center;
-  border-top-left-radius: 70px;
-  border-top-right-radius: 70px;
+  border-radius: 50%;
+  transition: background-color .4s, font-weight .2s;
 }
-.section  .three{
-  width: 19%;
-  margin-bottom: 0;
+.section  a:hover{
+  background-color: transparent;
+  font-weight: 700;
 }
 
-.section .row{
+.section .row.top{
   display: flex;
   justify-content: center;
+  margin-bottom: -40px;
 }
-.section .row.top{
-  margin-bottom: -2%;
+.section .row.top .line-left{
+  transform: rotate(42deg);
+  margin-right: 20px;
+  margin-top: 20px;
 }
-
-.section .column{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 20%;
-}
-
-.section .two{
-  transform: rotate(-60deg);
-  transform-origin: 90% -27%;
+ .line-left a{
+   transform: rotate(-42deg);
+ }
+ .line-right a{
+   transform: rotate(42deg);
+ }
+.section .row.top .line-right{
+  transform: rotate(-42deg);
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .section .one{
-  transform: rotate(-115deg);
-  transform-origin: 65% -5%;
-}
-.section .four{
-  transform: rotate(56deg);
-  transform-origin: 10% -50%;
+  margin-top: 10px;
 }
 .section .five{
-  transform: rotate(115deg);
-  transform-origin: 38% -3%;
+  margin-top: 10px;
+}
+
+.section .wrapper-image{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  user-select: none;
 }
 .section .img{
   z-index: 2;
-  width: 40%;
+  width: 50%;
   height: fit-content;
-  border: 20px solid #1ab4b4;
+  border: 2px solid #1ab4b4;
   border-radius: 50%;
 }
 
@@ -63,23 +70,56 @@ body{
   font-size: 2.5rem;
   font-weight: 700;
   margin-top: 80px;
+  user-select: none;
 }
 
 
 
   @media only screen and (max-width: 370px){
-
-
-
+    .section .row.top{
+      margin-bottom: -70px;
+    }
   }
 
   @media only screen and (min-width: 370px){
-
-
+    .section .row.top{
+      margin-bottom: -58px;
+    }
+    .section .row.top .line-right{
+      transform: rotate(-48deg);
+      margin-left: 30px;
+    }
+    .section .row.top .line-left{
+      transform: rotate(48deg);
+      margin-right: 30px;
+    }
+    .line-left a{
+      transform: rotate(-48deg);
+    }
+    .line-right a{
+      transform: rotate(48deg);
+    }
 
   }
 
   @media only screen and (min-width: 576px){
+    .section .row.top{
+      margin-bottom: -65px;
+    }
+    .section .row.top .line-right{
+      transform: rotate(-57deg);
+      margin-left: 40px;
+    }
+    .section .row.top .line-left{
+      transform: rotate(57deg);
+      margin-right: 40px;
+    }
+    .line-left a{
+      transform: rotate(-57deg);
+    }
+    .line-right a{
+      transform: rotate(57deg);
+    }
 
   }
 

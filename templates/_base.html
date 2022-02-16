@@ -61,8 +61,8 @@ content="">
        crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="{% static '/css/_base.css' %}">
 
-<!-- Specific Page JS goes HERE  -->
 {% block css %}
+
 {% endblock css %}
 
 </head>
@@ -87,12 +87,16 @@ content="">
   </ul>
 
     {% block content %}
+    <div class="back-btn">
+      <a href="{% url 'app:home' %}">
+        Home
+      </a>
+    </div>
     {% endblock content %}
 
 
     {% include './scripts.html' %}
 
-    <!-- Specific Page JS goes HERE  -->
     {% block js %}
     {% endblock js %}
 

@@ -5,20 +5,20 @@ body{
   margin-top: 12vh;
 }
 
-.section  a{
+.section  .row a{
   color: #6b4334;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content:center;
   background-color: #77dad1;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   text-align: center;
   border-radius: 50%;
   transition: background-color .4s, font-weight .2s;
 }
-.section  a:hover{
+.section  .row a:hover{
   background-color: transparent;
   font-weight: 700;
 }
@@ -73,6 +73,29 @@ body{
   user-select: none;
 }
 
+.share{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.share .social-buttons{
+  display: flex;
+}
+.share .social-buttons i{
+  font-size: 24px;
+  padding: 2px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.share .social-buttons a{
+  color: #4a5073;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.social-buttons a:hover{
+  color: #77dad1;
+}
 
 
   @media only screen and (max-width: 370px){

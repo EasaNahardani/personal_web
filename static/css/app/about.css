@@ -1,0 +1,11 @@
+.wrapper{
+  margin-top: 100px;
+}
+.wrapper h1{
+text-align: center;
+}
+.wrapper .bio{
+  padding: 80px;
+line-height: 2rem;
+font-size: 18px;
+}

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Skill
 
 
 
@@ -17,3 +18,8 @@ def about(request):
 
 def education(request):
     return render(request, './app/education.html')
+
+
+def skills(request):
+    skills = Skill.objects.all()
+    return render(request, './app/skills.html', {'skills':skills})

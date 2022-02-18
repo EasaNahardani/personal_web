@@ -9,3 +9,11 @@ text-align: center;
 line-height: 2rem;
 font-size: 18px;
 }
+.wrapper .bio a{
+  font-weight: 600;
+  text-decoration: none;
+  color: #622b17;
+}
+.wrapper .bio a:hover{
+  color: #77dad1;
+}

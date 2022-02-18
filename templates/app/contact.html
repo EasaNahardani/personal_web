@@ -8,21 +8,23 @@
 
 
 {% block content %}
-{{ block.super }}  
+{{ block.super }}
 <div class="envelope">
   <div class="envelope-cap"></div>
   <div class="latter-form">
-    <p>Hi,</p>
-    <span>I am</span>
-     <input class="latter-control" type="text"/>
-    <span>you can mail me at</span>
-    <input class="latter-control" type="email"/>
-    <br/><span>, or call me at</span>
-    <input class="latter-control" type="text"/>
-    <span>I would like to inform you that:</span>
-    <textarea class="latter-control"></textarea>
-    <p class="thanks">Thank You</p>
-    <button class="latter-btn">Send</button>
+    <form class="" action="" method="post">
+      <p>Hi,</p>
+      <span>I am</span>
+       <input class="latter-control" type="text"/>
+      <span>you can mail me at</span>
+      <input class="latter-control" type="email"/>
+      <br/><span>, or call me at</span>
+      <input class="latter-control" type="text"/>
+      <span>I would like to inform you that:</span>
+      <textarea class="latter-control"></textarea>
+      <p class="thanks">Thank You</p>
+      <button class="latter-btn">Send</button>
+    </form>
   </div>
 </div>
 {% endblock content %}

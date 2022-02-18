@@ -59,8 +59,8 @@ body{
 }
 .section .img{
   z-index: 2;
-  width: 50%;
-  height: fit-content;
+  width: 45%;
+  height: auto;
   border: 2px solid #1ab4b4;
   border-radius: 50%;
 }
@@ -102,9 +102,24 @@ body{
     .section .row.top{
       margin-bottom: -70px;
     }
+    .section .img{
+      width: 35%;
+      height: auto;
+      border-radius: 50%;
+    }
+    .section  .row a{
+      width: 60px;
+      height: 60px;
+      font-size: 12px;
+    }
   }
 
   @media only screen and (min-width: 370px){
+    .section .img{
+      width: 37%;
+      height: auto;
+      border-radius: 50%;
+    }
     .section .row.top{
       margin-bottom: -58px;
     }
@@ -126,6 +141,11 @@ body{
   }
 
   @media only screen and (min-width: 576px){
+    .section .img{
+      width: 28%;
+      height: auto;
+      border-radius: 50%;
+    }
     .section .row.top{
       margin-bottom: -65px;
     }
@@ -148,7 +168,7 @@ body{
 
   @media only screen and (min-width: 768px){
   .section .img{
-    width: 30%;
+    width: 20%;
   }
 
   }
@@ -167,6 +187,9 @@ body{
   @media only screen and (min-width: 1200px){
     .section{
       margin-top: 5vh;
+    }
+    .section .img{
+      width: 18%;
     }
 
   }

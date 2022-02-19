@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from .models import Skill
+from .models import Skill, Mobile
 
 
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
 
 def home(request):
@@ -23,3 +25,11 @@ def education(request):
 def skills(request):
     skills = Skill.objects.all()
     return render(request, './app/skills.html', {'skills':skills})
+
+
+def projects(request):
+    if is_ajax(request):
+        pass
+    else:
+        projects = Mobile.objects.all()
+    return render(request, './app/projects.html', {'projects': projects})

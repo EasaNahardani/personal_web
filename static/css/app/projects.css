@@ -1,0 +1,122 @@
+.wrapper{
+  margin-top: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.wrapper h1{
+text-align: center;
+}
+
+.wrapper .contents{
+  width: 75%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.category-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.category-wrapper .category{
+  background-color: #77dad1;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ;
+  user-select: none;
+}
+.category-wrapper .category:hover{
+  border-top: 8px solid #6b4334;
+  color: #6b4334;
+  font-weight: 600;
+}
+.wrapper  .projects .proj{
+  margin-bottom: 2rem;
+}
+.wrapper  .projects .proj a{
+  text-decoration: none;
+}
+.category-wrapper .mobile{
+
+}
+.category-wrapper .web{
+
+}
+.category-wrapper .articles{
+
+}
+.category-wrapper .libraries{
+
+}
+.category-wrapper .active{
+  border-top: 8px solid #6b4334;
+  color: #6b4334;
+  font-weight: 600;
+}
+.wrapper  .projects{
+  user-select: none;
+  background-color: #77dad1;
+  margin-top: -43px;
+  min-height: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 50px;
+}
+.projects .card{
+  border-radius: 1.5rem;
+  border: 0;
+  background-color: #125048;
+  color: white;
+}
+
+.projects .card .card-header {
+  padding: 0;
+  font-family: sans;
+  height: 270px;
+  border-radius: 1.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.projects .line{
+  width: 80%;
+  height: 1px;
+  background-color: pink;
+  margin: 0 auto;
+}
+.projects .card .tech{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 110px;
+}
+.projects .card .tech span{
+  padding: 0.3rem 0.7rem;
+  margin: 0.3rem 0.5rem;
+  border-radius: 10px;
+  border: 2px solid pink;
+}
+.projects .card-body{
+  text-align: center;
+}
+.projects .lang{
+  margin-top: 0.3rem;
+  text-align: center;
+}
+.projects .card-footer{
+  text-align: center;
+  background-color: rgb(0 0 0 / 20%);
+  border-radius: 1.5rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.projects .card-footer .publish{
+  display: flex;
+  justify-content: space-between;
+}

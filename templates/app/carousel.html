@@ -1,0 +1,25 @@
+{% load static %}
+<div class="CSSgal">
+
+  {% with count=p.images.all|length images=p.images.all %}
+
+  {% for i in images %}
+  <s id="s{{forloop.counter}}"></s>
+  {% endfor %}
+
+  <div class="slider">
+    {% for img in images %}
+      <div style="background-image: url({{img.image.url}})"></div>
+    {% endfor %}
+  </div>
+
+
+  <div class="bullets">
+    {% for i in images %}
+      <a href="" onclick="link2slider(this);return false;" data-target="s{{forloop.counter}}">{{forloop.counter}}</a>
+    {% endfor %}
+  </div>
+
+  {% endwith %}
+
+</div>

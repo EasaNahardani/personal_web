@@ -1,0 +1,29 @@
+{% load static my_filters %}
+<div class="col-md-6 col-lg-6 col-xl-4 proj">
+  <div class="card card-profile">
+    <div class="card-header" >
+      {% include 'app/carousel.html' %}
+    </div>
+    <div class="card-body">
+      <h5 class="title" >{{p.title}}</h5>
+    </div>
+    <div class="line"></div>
+    <span class="lang">{{p.language}}</span>
+    <div class="tech">
+      {% for t in p.technologies|splitter %}
+        <span>{{t}}</span>
+      {% endfor %}
+    </div>
+    <div class="card-footer">
+      {% if p.status == 'published' %}
+      <div class="publish">
+        <span>published date</span>
+        <span class="date">{{p.publish}}</span>
+      </div>
+      {% else %}
+        <span>Coming soon..</span>
+      {% endif %}
+    </div>
+  </div>
+ 
+</div>

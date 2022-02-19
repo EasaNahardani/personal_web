@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/app/projects.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/carousel.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+{{ block.super }}
+<div class="wrapper">
+  <h1>Projects</h1>
+  <div class="contents">
+
+    <div class="category-wrapper">
+      <div class="Mobile category active" title="Mobile Applications">
+        <span>Mobile</span>
+      </div>
+        <div class="web category" title="Web Applications">
+          <span>Web</span>
+        </div>
+        <div class="articles category" title="Articles">
+          <span>Articles</span>
+        </div>
+        <div class="libraries category" title="3th-party packages and libraries">
+          <span>Libraries</span>
+        </div>
+    </div>
+
+  </div>
+  <div class="projects row">
+    {% for p in projects %}
+      {% include 'app/project_card.html' %}
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'app/carousel.js' %}"></script>
+{% endblock js %}

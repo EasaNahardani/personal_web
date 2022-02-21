@@ -68,18 +68,36 @@ content="">
 
 </head>
 <body>
+  {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message|safe }}
+        <div class="close-wrapper">
+          <button  class="close"></button>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
   <ul  class="lang-switcher">
     <li class="current" title=" Click on the links on the rigth to see other languages.">
        <span>
          {% include 'england-flag.html' %}
        </span>
     </li>
-    <li class="other">
+    <li class="other" title="فارسی">
       <a href="">
         {% include 'iran-flag.html' %}
       </a>
     </li>
-    <li class="other">
+    <li class="other" title="">
+      <a href="">
+        {% include 'germany-flag.html' %}
+      </a>
+    </li>
+    <li class="other" title="Espanol">
       <a href="">
         {% include 'germany-flag.html' %}
       </a>

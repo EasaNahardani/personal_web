@@ -6,6 +6,7 @@ body{
 }
 
 .section  .row a{
+  user-select: none;
   color: #6b4334;
   text-decoration: none;
   display: flex;

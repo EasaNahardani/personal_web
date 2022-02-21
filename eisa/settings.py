@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -109,7 +110,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Spanish'),
+    ('de', gettext_noop('German')),
+    ('fa', gettext_noop('Persian')),
+)
+LOCALE_PATHS = (
+    BASE_DIR / 'locale/',
+)
 
 TIME_ZONE = 'UTC'
 
@@ -128,6 +138,17 @@ STATICFILES_DIRS = [(BASE_DIR / 'static')]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info alert',
+    messages.INFO: 'alert-info alert',
+    messages.SUCCESS: 'alert-success alert',
+    messages.WARNING: 'alert-warning alert',
+    messages.ERROR: 'alert-danger alert',
+}
 
 
 # Default primary key field type

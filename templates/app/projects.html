@@ -13,18 +13,14 @@
 <div class="wrapper">
   <h1>Projects</h1>
   <div class="contents">
-
     <div class="category-wrapper">
-      <div class="Mobile category active" title="Mobile Applications">
-        <span>Mobile</span>
+      <div class="application category {% if not '?' in request.get_full_path %}active{% endif %}" title="Mobile Applications & Web Applications" data-category="application">
+        <span>Apps</span>
       </div>
-        <div class="web category" title="Web Applications">
-          <span>Web</span>
-        </div>
-        <div class="articles category" title="Articles">
+        <div class="articles category {% if 'article' in request.get_full_path %}active{% endif %} " title="Articles" data-category="article">
           <span>Articles</span>
         </div>
-        <div class="libraries category" title="3th-party packages and libraries">
+        <div class="libraries category {% if 'library' in request.get_full_path %}active{% endif %}" title="3th-party packages and libraries" data-category="library">
           <span>Libraries</span>
         </div>
     </div>
@@ -42,5 +38,6 @@
 
 
 {% block js %}
-<script type="text/javascript" src="{% static 'app/carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/projects.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'js/app/carousel.js' %}" defer></script>
 {% endblock js %}

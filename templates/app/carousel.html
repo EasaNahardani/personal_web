@@ -1,10 +1,13 @@
 {% load static %}
 <div class="CSSgal">
 
-  {% with count=p.images.all|length images=p.images.all %}
+  {% with  images=p.images.all %}
+  {% with  length=images|length %}
+
+
 
   {% for i in images %}
-  <s id="s{{forloop.counter}}"></s>
+    <s class="{% if forloop.first %}current{% endif %}" id="s{{forloop.counter}}{{p.pk}}"></s>
   {% endfor %}
 
   <div class="slider">
@@ -15,11 +18,18 @@
 
 
   <div class="bullets">
-    {% for i in images %}
-      <a href="" onclick="link2slider(this);return false;" data-target="s{{forloop.counter}}">{{forloop.counter}}</a>
-    {% endfor %}
+{% if length > 1 %}
+     {% for i in images %}
+      {% if forloop.counter < 6 %}
+        <a class="{% if forloop.first %}current{% endif %}" href="" onclick="link2slider(this);return false;"
+                data-target="s{{forloop.counter}}{{p.pk}}">{{forloop.counter}}</a>
+      {% endif %}
+     {% endfor %}
+{% endif %}
   </div>
 
+
+  {% endwith %}
   {% endwith %}
 
 </div>

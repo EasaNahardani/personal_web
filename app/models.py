@@ -5,7 +5,9 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
+from django.utils.safestring import mark_safe
 from .validators import PhoneNumberValidator
+
 
 
 def get_image_filename(instance, filename):
@@ -21,16 +23,26 @@ class Image(models.Model):
                                     # related_name='images',            # this is not work
                                      limit_choices_to={'model__in':(
                                      'Article',
-                                     'Web',
-                                     'Mobile',
+                                     'Application',
                                      'Library')})
     object_id = models.PositiveIntegerField()
     project = GenericForeignKey('content_type', 'object_id')
     image = models.ImageField(upload_to=get_image_filename, verbose_name='Image')
 
 
+    def image_tag(self):
+        if self.image:
+            return mark_safe('<img src="%s" style="height:100px;border-radius:8px;" />' % self.image.url)
+        else:
+            return 'No Image'
 
-class Project(models.Model): # add link
+    image_tag.short_description = 'Image'
+
+
+
+
+
+class Project(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -38,16 +50,15 @@ class Project(models.Model): # add link
     #CATEGORY_CHOICES = (
     #    ('article', 'Article'),
     #    ('mobile', 'Mobile'),
-    #    ('web', 'Web'),
     #    ('library', 'Library'),
     #)
     title = models.CharField(max_length=250)
-    #category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='web')
+    url = models.URLField(blank=True)
     slug = models.SlugField(max_length=250, unique=True, allow_unicode=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-    images = GenericRelation(Image)   #  naming images raise an error :
+    images = GenericRelation(Image, blank=True, null=True)   #  naming images raise an error :
                                       # TypeError: Direct assignment to the reverse side of a related set is prohibited. Use +.set() instead.
                                       # because i had a field in my form named images
 
@@ -60,17 +71,16 @@ class Project(models.Model): # add link
 
 
 
+
 class Article(Project):
     description = models.TextField()
 
 
-class Web(Project):
+class Application(Project):
     language = models.CharField(max_length=250)
     technologies = models.TextField()
 
-class Mobile(Project):
-    language = models.CharField(max_length=250)
-    technologies = models.TextField()
+
 class Library(Project):
     language = models.CharField(max_length=250)
     technologies = models.TextField()

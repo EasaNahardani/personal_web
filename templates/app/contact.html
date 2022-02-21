@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load static %}
+{% load static my_filters %}
 
 
 {% block css %}
@@ -13,15 +13,32 @@
   <div class="envelope-cap"></div>
   <div class="latter-form">
     <form class="" action="" method="post">
+      {% csrf_token%}
       <p>Hi,</p>
       <span>I am</span>
-       <input class="latter-control" type="text"/>
+      {% if form.full_name.errors %}
+        {{form.full_name|addClass:'error'}}
+      {% else %}
+        {{form.full_name}}
+      {% endif %}
       <span>you can mail me at</span>
-      <input class="latter-control" type="email"/>
+      {% if form.sender_mail.errors %}
+        {{form.sender_mail|addClass:'error'}}
+      {% else %}
+        {{form.sender_mail}}
+      {% endif %}
       <br/><span>, or call me at</span>
-      <input class="latter-control" type="text"/>
+      {% if form.sender_phone.errors %}
+        {{form.sender_phone|addClass:'error'}}
+      {% else %}
+        {{form.sender_phone}}
+      {% endif %}
       <span>I would like to inform you that:</span>
-      <textarea class="latter-control"></textarea>
+      {% if form.content.errors %}
+        {{form.content|addClass:'error'}}
+      {% else %}
+        {{form.content}}
+      {% endif %}
       <p class="thanks">Thank You</p>
       <button class="latter-btn">Send</button>
     </form>
@@ -32,4 +49,5 @@
 
 
 {% block js %}
+<script type="text/javascript" src="{% static 'js/app/contact.js' %}" defer></script>
 {% endblock js %}

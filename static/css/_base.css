@@ -3,15 +3,22 @@ html , body {
   background-color: #00BFA5;
   overflow-x: hidden;
   box-sizing: border-box;
+  height: 100%;
 }
+*{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 
 .lang-switcher{
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 5px;
   margin: 0;
   padding: 2px;
   user-select: none;
+  z-index: 10;
 }
 
 .lang-switcher li{
@@ -30,8 +37,8 @@ html , body {
 .back-btn a{
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 25px;
+  top: 10px;
   display: flex;
   width: 60px;
   height: 60px;
@@ -47,4 +54,32 @@ html , body {
 .back-btn:hover a{
   font-weight: 700;
   background-color: transparent;
+}
+
+/************8**********        scrollbar   ************************************/
+::-webkit-scrollbar {
+    width: 18px;
+    height: 12px;
+    transition-duration: .45s;
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(90deg ,#434343,#434343 1px,#111 0,#111);
+    border-radius: 16px;
+}
+::-webkit-scrollbar-thumb {
+    background: #434343;
+    border-radius: 16px;
+    box-shadow: inset 3px 3px 2px hsl(0deg 0% 100% / 45%), inset -2px -2px 2px rgb(0 0 0 / 35%);
+}
+::-webkit-scrollbar-thumb:hover{
+  box-shadow: inset 2px 2px 3px hsl(0deg 0% 100% / 85%), inset -2px -2px 2px rgb(0 0 0 / 85%);
+}
+
+/* firefox */
+html{
+  scrollbar-color:#434343 #000;
+  scrollbar-width: thin;
 }

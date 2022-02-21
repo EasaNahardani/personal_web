@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Skill, ContactMessage, Library, Article, Web, Mobile, Image
-from .forms import ArticleForm, WebForm, LibraryForm, MobileForm
+from .models import Skill, ContactMessage, Library, Article, Application, Image
+from .forms import ArticleForm, ApplicationForm, LibraryForm
 #from django.contrib.contenttypes.models import ContentType
 
 @admin.register(Skill)
@@ -11,6 +11,7 @@ class SkillAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
+
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'sender_mail', 'sender_phone', 'sent_at')
@@ -18,14 +19,16 @@ class ContactMessageAdmin(admin.ModelAdmin):
     search_fields = ('full_name', 'sender_mail', 'sender_phone')
 
 
+
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('image', 'project')
+    list_display = ('image', 'project', 'image_tag')
     # list_filter = ('project', )            # this raise an error : 'GenericForeignKey' object has no attribute 'choices'
 
 
+
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title', 'status']
+    list_display = ['title', 'status', 'url']
     list_filter = ['created',]
     search_fields = ['title',]
     prepopulated_fields = {'slug': ('title',)}
@@ -63,36 +66,25 @@ class ArticleAdmin(ProjectAdmin):
         return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)
 
 
-@admin.register(Web)
-class WebAdmin(ProjectAdmin):
+
+
+@admin.register(Application)
+class ApplicationAdmin(ProjectAdmin):
     def get_form(self, request, obj=None, **kwargs):
         try:
             instance = kwargs['instance']
-            return WebForm(instance=instance)
+            return ApplicationForm(instance=instance)
         except KeyError:
-            return WebForm
+            return ApplicationForm
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
         extra_context = extra_context or {}
-        web = Web.objects.get(id=object_id)
-        extra_context["form"] = self.get_form(request, instance=web)
+        app = Application.objects.get(id=object_id)
+        extra_context["form"] = self.get_form(request, instance=app)
+
         return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)
 
 
-@admin.register(Mobile)
-class MobileAdmin(ProjectAdmin):
-    def get_form(self, request, obj=None, **kwargs):
-        try:
-            instance = kwargs['instance']
-            return MobileForm(instance=instance)
-        except KeyError:
-            return MobileForm
-
-    def change_view(self, request, object_id, form_url="", extra_context=None):
-        extra_context = extra_context or {}
-        mobile = Mobile.objects.get(id=object_id)
-        extra_context["form"] = self.get_form(request, instance=mobile)
-        return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)
 
 
 @admin.register(Library)

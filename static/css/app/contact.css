@@ -94,21 +94,38 @@ body {
   transition: 0.2s ease-in;
   z-index: 2;
 }
+.envelope:hover .error{
+  border-bottom: 2px solid red !important;
+}
+
+.envelope.open .latter-form {
+  bottom: 340px;
+  transition: 0.2s 0.2s ease-in;
+}
+.envelope.open .envelope-cap {
+  transform: rotateX(0deg);
+  transition: 0.2s ease-in;
+  z-index: 2;
+}
+.envelope.open .error{
+  border-bottom: 2px solid red !important;
+}
+
 
 
 @media only screen and (max-width: 370px){
   .envelope {
     width: 290px;
-    height: 245px;
+    height: 255px;
     margin-top: 300px;
   }
   .envelope:after, .envelope:before {
     left: 0;
     bottom: 0;
-    border-width: 220px 0 0 290px;
+    border-width: 230px 0 0 290px;
   }
   .envelope:after {
-    border-width: 220px 290px 0 0;
+    border-width: 230px 290px 0 0;
   }
   .envelope .envelope-cap {
     left: 0;
@@ -123,16 +140,16 @@ body {
   }
   .envelope .latter-form {
     padding: 16px;
-    width: 245px;
-    height: 245px;
+    width: 259px;
+    height: 200px;
     left: 23px;
-    bottom: 0;
+    bottom: 55px;
     z-index: 3;
     line-height: 2;
     font-size: 10px;
   }
   .envelope .latter-form .thanks {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.1rem;
     user-select: none;
   }
   .envelope .latter-form textarea {
@@ -147,8 +164,21 @@ body {
     border-radius: 20px;
     font-size: 12px;
   }
+  .envelope:hover .latter-form .latter-btn {
+    margin-top: 0;
+  }
   .envelope:hover .latter-form {
-    bottom: 180px;
+    bottom: 199px;
+    height: 280px;
+    width: 245px;
+  }
+  .envelope.open .latter-form .latter-btn {
+    margin-top: 0;
+  }
+  .envelope.open .latter-form {
+    bottom: 199px;
+    height: 280px;
+    width: 245px;
   }
 
 }
@@ -156,7 +186,7 @@ body {
 @media only screen and (min-width: 370px){
   .envelope {
     width: 330px;
-    height: 252px;
+    height: 256px;
     margin-top: 300px;
   }
   .envelope:after, .envelope:before {
@@ -179,15 +209,15 @@ body {
   }
   .envelope .latter-form {
     padding: 10px;
-    width: 285px;
-    height: 252px;
+    width: 295px;
+    height: 256px;
     left: 23px;
     bottom: 0;
     line-height: 2;
     font-size: 10px;
   }
   .envelope .latter-form .thanks {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
     user-select: none;
   }
   .envelope .latter-form textarea {
@@ -202,7 +232,12 @@ body {
   }
 
   .envelope:hover .latter-form {
-    bottom: 200px;
+    bottom: 218px;
+    height: 272px;
+  }
+  .envelope.open .latter-form {
+    bottom: 218px;
+    height: 272px;
   }
 
 
@@ -267,8 +302,17 @@ body {
 
   .envelope:hover .latter-form {
     bottom: 340px;
+    height: 370px;
   }
   .envelope:hover .envelope-cap {
+    transform: rotateX(0deg);
+  }
+
+  .envelope.open .latter-form {
+    bottom: 340px;
+    height: 370px;
+  }
+  .envelope.open .envelope-cap {
     transform: rotateX(0deg);
   }
 

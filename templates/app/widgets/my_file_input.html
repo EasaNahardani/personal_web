@@ -1,0 +1,21 @@
+<br>
+{{ widget.initial_text }}:
+<br>
+{% for file in widget.files %}
+
+   <a href="{{ file.url }}">{{ file }}</a>
+  {% if not widget.required %}
+    <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+    <label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+  {% endif %}<br>
+
+{% endfor %}
+
+{{ widget.input_text }}:
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+
+
+{% if widget.is_initial %}
+<!-- this is not required here
+  you can see main file in django/forms/templates/widgets/.../clearable_file_input.html  -->
+{% endif %}

@@ -4,26 +4,32 @@
     <div class="card-header" >
       {% include 'app/carousel.html' %}
     </div>
-    <div class="card-body">
+    <div class="card-body" data-url="{{p.url}}">
       <h5 class="title" >{{p.title}}</h5>
     </div>
     <div class="line"></div>
-    <span class="lang">{{p.language}}</span>
-    <div class="tech">
-      {% for t in p.technologies|splitter %}
-        <span>{{t}}</span>
-      {% endfor %}
-    </div>
+    {% if p.language %}
+      <span class="lang">{{p.language}}</span>
+      <div class="tech">
+        {% for t in p.technologies|splitter %}
+          <span>{{t}}</span>
+        {% endfor %}
+      </div>
+      {% else %}
+        <div class="description">
+          {{p.description|safe|truncatechars:200}}
+        </div>
+      {% endif %}
     <div class="card-footer">
       {% if p.status == 'published' %}
       <div class="publish">
-        <span>published date</span>
-        <span class="date">{{p.publish}}</span>
+        <span>published at</span>
+        <span class="date">{{p.publish|date:"Y F"}}</span>
       </div>
       {% else %}
-        <span>Coming soon..</span>
+        <span class="soon">Coming soon..</span>
       {% endif %}
     </div>
   </div>
- 
+
 </div>

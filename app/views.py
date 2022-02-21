@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Skill, Mobile
+from django.shortcuts import render, redirect
+from .models import Skill, Application, Article, Library, ContactMessage
+from .forms import ContactMessageForm
 
 
 def is_ajax(request):
@@ -11,7 +12,14 @@ def home(request):
 
 
 def contact(request):
-    return render(request, './app/contact.html')
+    if request.method == 'POST':
+        form = ContactMessageForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('app:home')
+    else:
+        form = ContactMessageForm()
+    return render(request, './app/contact.html', {'form':form})
 
 
 def about(request):
@@ -28,8 +36,12 @@ def skills(request):
 
 
 def projects(request):
-    if is_ajax(request):
-        pass
+    category = request.GET.get('category', None)
+    if category:
+        if category == 'article':
+            projects = Article.objects.all() #prefetch_related('images')
+        else:
+            projects = Library.objects.all() #prefetch_related('images')
     else:
-        projects = Mobile.objects.all()
+        projects = Application.objects.all() #prefetch_related('images')
     return render(request, './app/projects.html', {'projects': projects})

@@ -6,6 +6,9 @@ from django.core.exceptions import ValidationError
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.utils.safestring import mark_safe
+from parler.models import TranslatableModelMixin
+from parler.managers import TranslatableManager
+from .fields import AllTranslatedFields
 from .validators import PhoneNumberValidator
 
 
@@ -42,7 +45,7 @@ class Image(models.Model):
 
 
 
-class Project(models.Model):
+class Project(TranslatableModelMixin, models.Model):# if this inherit TranslatableModel, so you dont need TranslatableManager()
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -52,15 +55,16 @@ class Project(models.Model):
     #    ('mobile', 'Mobile'),
     #    ('library', 'Library'),
     #)
-    title = models.CharField(max_length=250)
     url = models.URLField(blank=True)
-    slug = models.SlugField(max_length=250, unique=True, allow_unicode=True)
+    slug = models.SlugField(max_length=250, unique=True, allow_unicode=True) # remove
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     images = GenericRelation(Image, blank=True, null=True)   #  naming images raise an error :
                                       # TypeError: Direct assignment to the reverse side of a related set is prohibited. Use +.set() instead.
                                       # because i had a field in my form named images
+
+    objects = TranslatableManager()
 
     class Meta:
         abstract = True
@@ -73,17 +77,26 @@ class Project(models.Model):
 
 
 class Article(Project):
-    description = models.TextField()
+    translations = AllTranslatedFields(
+        description = models.TextField(),
+        title=models.CharField(max_length=250)
+    )
 
 
 class Application(Project):
-    language = models.CharField(max_length=250)
-    technologies = models.TextField()
+    translations = AllTranslatedFields(
+        language = models.CharField(max_length=250),
+        technologies = models.TextField(),           # out of translating
+        title=models.CharField(max_length=250),
+    )
 
 
 class Library(Project):
-    language = models.CharField(max_length=250)
-    technologies = models.TextField()
+    translations = AllTranslatedFields(
+        language = models.CharField(max_length=250),
+        technologies = models.TextField(),            # out of translating
+        title=models.CharField(max_length=250),
+    )
 
     class Meta:
         verbose_name = 'Library'
@@ -94,7 +107,6 @@ class Library(Project):
 
 class Skill(models.Model):
     name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
     level = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
     class Meta:

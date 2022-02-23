@@ -10,9 +10,12 @@ project.click(goToProject)
 function change_category(){
   const category = $(this).data('category');
   if (category == 'application') {
-    location = location.origin +  '/projects';
+    // location.href : http://www.example.com:8000/path?param=foo
+    // location.origin : http://www.example.com:8000
+    // location.pathname : /path/
+    location = location.pathname;
   }else {
-    location = location.origin + '/projects?category=' + category;
+    location = location.pathname + '?category=' + category;
   }
 }
 

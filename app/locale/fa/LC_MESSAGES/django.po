@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-22 23:05+0330\n"
+"PO-Revision-Date: 2022-02-23 02:06+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
+
+#: .\app\models.py:115
+msgid "Email Address"
+msgstr ""
+
+#: .\app\models.py:117
+msgid "A user with that email already exists."
+msgstr ""
+
+#: .\app\models.py:121
+msgid "Phone Number"
+msgstr ""
+
+#: .\app\models.py:136
+msgid ""
+"Both this field and phone number can not be blank.please fill one of them"
+msgstr ""
+
+#: .\app\models.py:137
+msgid "Both this field and email can not be blank.please fill one of them."
+msgstr ""
+
+#: .\app\urls.py:9
+msgid "contact/"
+msgstr "ارتباط/"
+
+#: .\app\urls.py:10
+msgid "about/"
+msgstr "درباره/"
+
+#: .\app\urls.py:11
+msgid "education/"
+msgstr "تحصیلات/"
+
+#: .\app\urls.py:12
+msgid "skills/"
+msgstr "مهارتها/"
+
+#: .\app\urls.py:13
+msgid "projects/"
+msgstr "پروژه/"
+
+#: .\app\views.py:17
+msgid "check me  here"
+msgstr "لطفا اینجا را کلیک کنید"
+
+#: .\app\views.py:18
+msgid "Recently 400th rank in"
+msgstr "کسب رتبه 400 در "
+
+#: .\app\views.py:44
+msgid "Message sent successfully"
+msgstr "با موفقیت ارسال شد"
+
+#: .\app\views.py:47
+msgid "Error submitting your message"
+msgstr "خطایی در ارسال فرم رخ داد! لطفا فیلد ها را بررسی کنید"
+
+#: .\app\views.py:76
+msgid "No Articles!"
+msgstr "در حال  حاضر هیچ مقاله ای وجود ندارد"
+
+#: .\app\widgets.py:7
+msgid "Clear"
+msgstr ""
+
+#: .\app\widgets.py:8
+msgid "Currently"
+msgstr ""
+
+#: .\app\widgets.py:9
+msgid "Change"
+msgstr ""

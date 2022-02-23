@@ -1,14 +1,14 @@
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 from .models import Skill, ContactMessage, Library, Article, Application, Image
 from .forms import ArticleForm, ApplicationForm, LibraryForm
 #from django.contrib.contenttypes.models import ContentType
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'level')
+    list_display = ('name', 'level')
     list_filter = ('name', 'level')
     search_fields = ('name',)
-    prepopulated_fields = {'slug': ('name',)}
 
 
 
@@ -27,13 +27,16 @@ class ImageAdmin(admin.ModelAdmin):
 
 
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(TranslatableAdmin):
     list_display = ['title', 'status', 'url']
     list_filter = ['created',]
     search_fields = ['title',]
-    prepopulated_fields = {'slug': ('title',)}
-    add_form_template = 'admin/project_form.html'
-    change_form_template = 'admin/project_form.html'
+    #prepopulated_fields = {'slug': ('title',)}
+    add_form_template = 'parler/change_form.html'
+    change_form_template = 'parler/change_form.html'
+
+    def get_prepopulated_fields(self, request, obj=None):
+        return {'slug': ('title',)}
 
     def add_view(self, request, form_url="", extra_context=None):
         extra_context = extra_context or {}
@@ -53,6 +56,8 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(Article)
 class ArticleAdmin(ProjectAdmin):
     def get_form(self, request, obj=None, **kwargs):
+        print('get_form called')
+        print('*********')
         try:
             instance = kwargs['instance']
             return ArticleForm(instance=instance)

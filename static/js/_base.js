@@ -7,6 +7,20 @@ $(document).ready(function(){
   const close_btn = $('.messages .close');
   var target_to_fading = alert;
   var block_fading = false;
+  const language_switcher = $('.lang-switcher');
+  const first_flag = language_switcher.children().first();
+
+
+
+  function shift_flags() {
+    var is_shifted = first_flag.hasClass('current');
+    if (!is_shifted) {
+      const current_flag = language_switcher.find('.current')[0];
+      first_flag.before(current_flag);
+    }
+  }
+
+  shift_flags();
 
 
   close_btn.click(close_alert)

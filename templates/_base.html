@@ -3,8 +3,9 @@
 * Volt Free - Bootstrap 5 Dashboard
 ======================================================
 -->
-{% load i18n static %}
+{% load i18n static my_filters %}
 <!DOCTYPE html>
+{% get_current_language_bidi as bidi %}
 <html lang="en" class="notranslate" translate="no">
 
 <head>
@@ -67,11 +68,13 @@ content="">
 {% endblock css %}
 
 </head>
-<body>
+{% with current_lang=request.LANGUAGE_CODE %}
+<body  {% if current_lang == 'fa' %} style="font-family:fadigits, sans;" {% endif %}>
+
   {% if messages %}
     <ul class="messages">
     {% for message in messages %}
-      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+      <li {% if message.tags %} class="{{ message.tags }}"{% endif %} {% if bidi %} dir="rtl" {% endif %}>
         {{ message|safe }}
         <div class="close-wrapper">
           <button  class="close"></button>
@@ -81,34 +84,28 @@ content="">
     </ul>
   {% endif %}
 
-  <ul  class="lang-switcher">
-    <li class="current" title=" Click on the links on the rigth to see other languages.">
-       <span>
-         {% include 'england-flag.html' %}
-       </span>
-    </li>
-    <li class="other" title="فارسی">
-      <a href="">
-        {% include 'iran-flag.html' %}
-      </a>
-    </li>
-    <li class="other" title="">
-      <a href="">
-        {% include 'germany-flag.html' %}
-      </a>
-    </li>
-    <li class="other" title="Espanol">
-      <a href="">
-        {% include 'germany-flag.html' %}
-      </a>
-    </li>
 
+{% get_available_languages as LANGUAGES %}
+
+  <ul  class="lang-switcher">
+    {% for language in LANGUAGES %}
+     {% with lang_code=language.0 %}
+      <li class="{% if lang_code == current_lang %}current{% else %}other{% endif %}"
+          title="{% if lang_code == current_lang %}{% translate 'Click on the links on the rigth to see other languages' %}{% else %}{{ lang_code|language_name_local }}{% endif %}">
+           <a {% if not lang_code == current_lang %}href="{{request.get_full_path|translated_url:lang_code}}"{% else %}href="javascript:void(0);"{% endif %}">
+             {% include lang_code|add:"-flag.html" %}
+          </a>
+      </li>
+      {% endwith %}
+    {% endfor %}
   </ul>
+  {% endwith %}
+
 
     {% block content %}
     <div class="back-btn">
       <a href="{% url 'app:home' %}">
-        Home
+        {% translate 'Home' %}
       </a>
     </div>
     {% endblock content %}

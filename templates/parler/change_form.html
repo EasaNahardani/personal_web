@@ -1,0 +1,5 @@
+{% extends "admin/project_form.html" %}
+
+{% block field_sets %}
+{% if language_tabs %}{% include "parler/language_tabs.html" %}{% endif %}
+{% endblock %}

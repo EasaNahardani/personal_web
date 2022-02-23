@@ -171,6 +171,9 @@ body{
   .section .img{
     width: 20%;
   }
+  .section .full-name{
+    margin-top: 70px;
+  }
 
   }
 

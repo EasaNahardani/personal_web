@@ -69,6 +69,12 @@ body {
   border: none;
   outline: none;
   border-bottom: 1px solid #000;
+
+}
+.envelope .latter-form .btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: right;
 }
 .envelope .latter-form .latter-btn {
   border: 1px solid #333;
@@ -154,6 +160,7 @@ body {
   }
   .envelope .latter-form textarea {
     width: 100%;
+    line-height: 1rem;
   }
   .envelope .latter-form .latter-control {
     border-bottom: 1px solid #000;
@@ -163,6 +170,9 @@ body {
     padding: 2px 12px;
     border-radius: 20px;
     font-size: 12px;
+  }
+  .envelope .latter-form .btn-wrapper{
+    margin-top: -15px;
   }
   .envelope:hover .latter-form .latter-btn {
     margin-top: 0;
@@ -277,6 +287,7 @@ body {
     bottom: 100%;
   }
   .envelope .latter-form {
+    font-size: 12px;
     background: #fff;
     padding: 30px;
     width: 600px;
@@ -290,8 +301,13 @@ body {
   .envelope .latter-form textarea {
     width: 100%;
   }
+  .envelope .latter-form .btn-wrapper{
+    padding-top: 0.6rem;
+    margin-top: -32px;
+  }
   .envelope .latter-form .latter-control {
     border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
   }
   .envelope .latter-form .latter-btn {
     border: 1px solid #333;

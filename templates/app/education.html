@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load static %}
+{% load i18n static %}
 
 
 {% block css %}
@@ -10,15 +10,15 @@
 {% block content %}
 {{ block.super }}
 <div class="wrapper">
-  <h1>Education</h1>
-  <h3>University</h3>
+  <h1>{% translate 'Education' %}</h1>
+  <h3>{% translate 'University' %}</h3>
   <div class=" education University">
-    <span>Hakim Sabzevar University (2012-2016)</span>
+    <span>{% translate 'Hakim Sabzevar University (2012-2016)' %}</span>
     <img class="anabin" title="this image be derived of anabin.kmk.org " src="{% static 'img/anabin-en-univ.PNG' %}" alt="derived of anabin.kmk.org">
   </div>
-  <h3>Field and Degree</h3>
+  <h3>{% translate 'Field and Degree' %}</h3>
   <div class="education field">
-    <span>  Bachelor in Electrical Engineeing</span>
+    <span>  {% translate 'Bachelor in Electrical Engineeing' %}</span>
     <img class="anabin" title="this image be derived of anabin.kmk.org " src="{% static 'img/anabin-en.PNG' %}" alt="this image be derived of anabin.kmk.org">
   </div>
 </div>

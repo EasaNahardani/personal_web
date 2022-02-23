@@ -1,12 +1,35 @@
 {% extends "admin/base_site.html" %}
 {% load admin_urls static admin_modify %}
 
-{% block headjs %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="/css/parler/parler_admin.css">
+{% endblock %}
+
+{% block extrahead %}
 {{ media }}
 {% endblock %}
 
 {% block content %}
-    <form method="POST" action="" enctype="multipart/form-data" >
+
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+      {% change_form_object_tools %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+{% endfor %}
+{% endblock %}
+
+    <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
         <input type="submit" value="Submit">

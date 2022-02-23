@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my apps
     'app.apps.AppConfig',
+    # third-party
+    'rosetta',
+    'parler',
 ]
 
+###############################################################################
+#                                Midlewares                                   #
+###############################################################################
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -53,8 +59,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+###############################################################################
+#                                Other Stuffs                                 #
+###############################################################################
 ROOT_URLCONF = 'eisa.urls'
-
+WSGI_APPLICATION = 'eisa.wsgi.application'
+###############################################################################
+#                                Templates                                    #
+###############################################################################
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -73,8 +85,9 @@ TEMPLATES = [
 
 # in order to override django.forms widgets
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
-
-WSGI_APPLICATION = 'eisa.wsgi.application'
+###############################################################################
+#                                Databases                                    #
+###############################################################################
 
 
 # Database
@@ -86,7 +99,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+###############################################################################
+#                                 Authentications                             #
+###############################################################################
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -106,16 +121,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+###############################################################################
+#                                i18n & l10n                                  #
+###############################################################################
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+from django.utils.translation import gettext_lazy as _
 
 LANGUAGE_CODE = 'en'
 LANGUAGES = (
-    ('en', 'English'),
-    ('es', 'Spanish'),
-    ('de', gettext_noop('German')),
-    ('fa', gettext_noop('Persian')),
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('de', _('German')),
+    ('fa', _('Persian')),
 )
 LOCALE_PATHS = (
     BASE_DIR / 'locale/',
@@ -128,7 +147,36 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+###############################################################################
+#                          Django-Parler                                     #
+###############################################################################
 
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+        {'code': 'fa'},
+        {'code': 'de'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
+
+ # to disable caching fields
+ # PARLER_ENABLE_CACHING = False
+
+ # If Parler runs on multiple sites that share the same cache
+ # PARLER_CACHE_PREFIX = ‘mysite’
+###############################################################################
+#                                Rosetta                                      #
+###############################################################################
+# login page  for translators - default is LOGIN_URL
+ROSETTA_LOGIN_URL = ''
+###############################################################################
+#                          Media & Static                                     #
+###############################################################################
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -138,7 +186,9 @@ STATICFILES_DIRS = [(BASE_DIR / 'static')]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+###############################################################################
+#                                Messages                                     #
+###############################################################################
 
 from django.contrib.messages import constants as messages
 
@@ -150,7 +200,13 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger alert',
 }
 
-
+###############################################################################
+#                             Security & deployment                           #
+###############################################################################
+# security
+###############################################################################
+#                                                                            #
+###############################################################################
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

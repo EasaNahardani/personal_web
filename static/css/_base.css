@@ -1,3 +1,5 @@
+@import "./../fonts/myfont1.css";
+
 html , body {
   /*background-color: #1ab4b4;*/
   background-color: #00BFA5;
@@ -35,14 +37,16 @@ html , body {
 }
 
 .back-btn a{
+  font-size: 14px;
   cursor: pointer;
   position: absolute;
   right: 25px;
   top: 10px;
   display: flex;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   justify-content: center;
+  text-align: center;
   align-items: center;
   background-color: #77dad1;
   border-radius: 50%;

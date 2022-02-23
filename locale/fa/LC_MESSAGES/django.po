@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-22 23:05+0330\n"
+"PO-Revision-Date: 2022-02-23 04:43+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
+
+#: .\eisa\settings.py:133
+msgid "English"
+msgstr ""
+
+#: .\eisa\settings.py:134
+msgid "Spanish"
+msgstr ""
+
+#: .\eisa\settings.py:135
+msgid "German"
+msgstr ""
+
+#: .\eisa\settings.py:136
+msgid "Persian"
+msgstr ""
+
+#: .\templates\_base.html:92
+msgid "Click on the links on the rigth to see other languages"
+msgstr "برای انتخاب زبان روی آیکون های سمت راست کلیک کنید"
+
+#: .\templates\_base.html:106
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\templates\app\about.html:13
+#| msgid "About me"
+msgid "About Me"
+msgstr "درباره من"
+
+#: .\templates\app\about.html:16
+#, python-format
+msgid ""
+"\n"
+"     Hello, nice to meet you!\n"
+"     <br><br>\n"
+"    Let me tell you a little about my story. I am from Iran, a South-Asia country that is going through a tough time.\n"
+"    <br>I have have learned different skills you can check by clicking on\n"
+"    <a href=\"%(path)s\">Skills</a> link.\n"
+"      I love programming, it is amazing to me how I am able to transform abstract ideas\n"
+"     into software, making the complex simple .I can take care of all your web development stuff and enjoy sharing my knowledge as well as creating and innovating.\n"
+"     <br><br>\n"
+"     Now just keep clicking, and get to know me better as you go!\n"
+"     "
+msgstr ""
+"\n"
+"سلام و درود<br>\n"
+"از اینکه اینجا میبینمتون خوشحال هستم\n"
+"<br><br>\n"
+"من اهل ایران هستم کشوری در جنوب غربی آسیا  \n"
+"<br>\n"
+"من تاکنون مهارتهای مختلفی یاد گرفته ام که شما با بررسی این وبسایت  و کلیک روی\n"
+"<a href=\"%(path)s\">Skills</a>\n"
+"می توانید به لیستی از آنها دسترسی داشته باشید.\n"
+"<br><br>\n"
+"همچنین در گیت هاب و استک اور فلو فعالیت دارم و در صفحه اصلی به این اکانت ها لینک هایی داده شده است "
+
+#: .\templates\app\contact.html:17
+msgid "Hi,"
+msgstr "سلام"
+
+#: .\templates\app\contact.html:18
+msgid "I am"
+msgstr "من"
+
+#: .\templates\app\contact.html:24
+msgid "you can mail me at"
+msgstr "هستم و تو میتونی در ادرس ایمیل "
+
+#: .\templates\app\contact.html:30
+msgid ", or call me at"
+msgstr "پیام ارسال کنی یا با من به شماره"
+
+#: .\templates\app\contact.html:36
+msgid "I would like to inform you that:"
+msgstr "تماس بگیری و من در اینجا میخام بگم:"
+
+#: .\templates\app\contact.html:42
+msgid "Thank You"
+msgstr "متشکرم"
+
+#: .\templates\app\contact.html:43
+msgid "Send"
+msgstr "ارسال"
+
+#: .\templates\app\education.html:13 .\templates\app\home.html:19
+msgid "Education"
+msgstr "تحصیلات"
+
+#: .\templates\app\education.html:14
+msgid "University"
+msgstr "دانشگاه"
+
+#: .\templates\app\education.html:16
+msgid "Hakim Sabzevar University (2012-2016)"
+msgstr "دانشگاه سراسری حکیم سبزواری(1391-1395)"
+
+#: .\templates\app\education.html:19
+msgid "Field and Degree"
+msgstr "رشته  و مقطع تحصیلی"
+
+#: .\templates\app\education.html:21
+msgid "Bachelor in Electrical Engineeing"
+msgstr "کارشناسی مهندسی برق"
+
+#: .\templates\app\home.html:16
+msgid "Contact"
+msgstr "تماس"
+
+#: .\templates\app\home.html:24 .\templates\app\skills.html:13
+msgid "Skills"
+msgstr "مهارتها"
+
+#: .\templates\app\home.html:28 .\templates\app\projects.html:14
+msgid "Projects"
+msgstr "پروژه ها"
+
+#: .\templates\app\home.html:31
+msgid "About me"
+msgstr "درباره من"
+
+#: .\templates\app\home.html:43
+msgid "Eisa Nahardani"
+msgstr "عیسی نهاردانی"
+
+#: .\templates\app\project_card.html:30
+msgid "Coming soon.."
+msgstr "در حال ساخت..."
+
+#: .\templates\app\projects.html:18
+msgid "Apps"
+msgstr "اپلیکیشن ها"
+
+#: .\templates\app\projects.html:21
+msgid "Articles"
+msgstr "مقاله ها"
+
+#: .\templates\app\projects.html:24
+msgid "Libraries"
+msgstr "کتابخانه ها"

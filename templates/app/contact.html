@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load static my_filters %}
+{% load static i18n my_filters %}
 
 
 {% block css %}
@@ -11,36 +11,39 @@
 {{ block.super }}
 <div class="envelope">
   <div class="envelope-cap"></div>
-  <div class="latter-form">
+  <div class="latter-form" {% if bidi %} style="text-align:right;" dir="rtl" {% endif %}>
     <form class="" action="" method="post">
       {% csrf_token%}
-      <p>Hi,</p>
-      <span>I am</span>
+      <p>{% translate 'Hi,' %}</p>
+      <span>{% translate 'I am' %}</span>
       {% if form.full_name.errors %}
         {{form.full_name|addClass:'error'}}
       {% else %}
         {{form.full_name}}
       {% endif %}
-      <span>you can mail me at</span>
+      <span>{% translate 'you can mail me at' %}</span>
       {% if form.sender_mail.errors %}
         {{form.sender_mail|addClass:'error'}}
       {% else %}
         {{form.sender_mail}}
       {% endif %}
-      <br/><span>, or call me at</span>
+      <br/><span>{% translate ', or call me at' %}</span>
       {% if form.sender_phone.errors %}
         {{form.sender_phone|addClass:'error'}}
       {% else %}
         {{form.sender_phone}}
       {% endif %}
-      <span>I would like to inform you that:</span>
+      <span>{% translate 'I would like to inform you that:' %}</span>
       {% if form.content.errors %}
         {{form.content|addClass:'error'}}
       {% else %}
         {{form.content}}
       {% endif %}
-      <p class="thanks">Thank You</p>
-      <button class="latter-btn">Send</button>
+      <p class="thanks">{% translate 'Thank You' %}</p>
+      <div class="btn-wrapper" {% if bidi %} style="justify-content:left !important;" dir="ltr"{% endif %}>
+        <button class="latter-btn">{% translate 'Send' %}</button>
+      </div>
+
     </form>
   </div>
 </div>

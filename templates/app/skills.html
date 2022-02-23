@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load static %}
+{% load i18n  static %}
 
 
 {% block css %}
@@ -10,7 +10,7 @@
 {% block content %}
 {{ block.super }}
 <div class="wrapper">
-  <h1>Skills</h1>
+  <h1>{% translate 'Skills' %}</h1>
   <div class="row progresses">
 
   {% for s in skills %}

@@ -1,4 +1,4 @@
-{% load static my_filters %}
+{% load static i18n  my_filters %}
 <div class="col-md-6 col-lg-6 col-xl-4 proj">
   <div class="card card-profile">
     <div class="card-header" >
@@ -27,7 +27,7 @@
         <span class="date">{{p.publish|date:"Y F"}}</span>
       </div>
       {% else %}
-        <span class="soon">Coming soon..</span>
+        <span class="soon">{% translate 'Coming soon..' %}</span>
       {% endif %}
     </div>
   </div>

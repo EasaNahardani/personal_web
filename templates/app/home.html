@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load static %}
+{% load i18n static %}
 
 
 {% block css %}
@@ -13,22 +13,22 @@
   <div class="row top">
     <div class="line-left">
       <a href="{% url 'app:contact' %}" class="two">
-        Contact
+        {% translate 'Contact' %}
       </a>
       <a href="{% url 'app:education' %}" class="one">
-        Education
+        {% translate 'Education' %}
       </a>
     </div>
 
     <a href="{% url 'app:skills' %}" class="three">
-      Skills
+      {% translate 'Skills' %}
     </a>
     <div class="line-right">
       <a href="{% url 'app:projects' %}" class="four">
-        Projects
+        {% translate 'Projects' %}
       </a>
       <a href="{% url 'app:about' %}" class="five">
-        About me
+        {% translate 'About me' %}
       </a>
     </div>
 
@@ -40,7 +40,7 @@
 
 
   <div class="full-name">
-    Eisa Nahardani
+    {% translate 'Eisa Nahardani' %}
   </div>
 
   <div class="share">

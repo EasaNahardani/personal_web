@@ -1,5 +1,6 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
+from parler.forms import TranslatableModelFormMixin, TranslatableModelFormMetaclass
 from .models import Article, Application, Library, ContactMessage
 from .widgets import  MyFileInput
 
@@ -68,7 +69,7 @@ class ContactMessageForm(forms.ModelForm):
 
 
 
-class ProjectForm(forms.ModelForm):
+class ProjectForm(TranslatableModelFormMixin, forms.ModelForm, metaclass=TranslatableModelFormMetaclass):
     # images_list = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}), help_text='<br>maximum is 5 images')      # solution 2
 
     def __init__(self, *args, **kwargs):

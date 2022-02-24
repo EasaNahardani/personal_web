@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 23:05+0330\n"
+"POT-Creation-Date: 2022-02-24 06:14+0330\n"
 "PO-Revision-Date: 2022-02-23 04:43+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,32 +19,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: .\eisa\settings.py:133
+#: .\eisa\settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\eisa\settings.py:134
+#: .\eisa\settings.py:140
 msgid "Spanish"
 msgstr ""
 
-#: .\eisa\settings.py:135
+#: .\eisa\settings.py:141
 msgid "German"
 msgstr ""
 
-#: .\eisa\settings.py:136
+#: .\eisa\settings.py:142
 msgid "Persian"
 msgstr ""
 
-#: .\templates\_base.html:92
+#: .\templates\_base.html:94
 msgid "Click on the links on the rigth to see other languages"
 msgstr "برای انتخاب زبان روی آیکون های سمت راست کلیک کنید"
 
-#: .\templates\_base.html:106
+#: .\templates\_base.html:108
 msgid "Home"
 msgstr "صفحه اصلی"
 
 #: .\templates\app\about.html:13
-#| msgid "About me"
 msgid "About Me"
 msgstr "درباره من"
 
@@ -54,11 +53,15 @@ msgid ""
 "\n"
 "     Hello, nice to meet you!\n"
 "     <br><br>\n"
-"    Let me tell you a little about my story. I am from Iran, a South-Asia country that is going through a tough time.\n"
+"    Let me tell you a little about my story. I am from Iran, a South-Asia "
+"country that is going through a tough time.\n"
 "    <br>I have have learned different skills you can check by clicking on\n"
 "    <a href=\"%(path)s\">Skills</a> link.\n"
-"      I love programming, it is amazing to me how I am able to transform abstract ideas\n"
-"     into software, making the complex simple .I can take care of all your web development stuff and enjoy sharing my knowledge as well as creating and innovating.\n"
+"      I love programming, it is amazing to me how I am able to transform "
+"abstract ideas\n"
+"     into software, making the complex simple .I can take care of all your "
+"web development stuff and enjoy sharing my knowledge as well as creating and "
+"innovating.\n"
 "     <br><br>\n"
 "     Now just keep clicking, and get to know me better as you go!\n"
 "     "
@@ -69,11 +72,13 @@ msgstr ""
 "<br><br>\n"
 "من اهل ایران هستم کشوری در جنوب غربی آسیا  \n"
 "<br>\n"
-"من تاکنون مهارتهای مختلفی یاد گرفته ام که شما با بررسی این وبسایت  و کلیک روی\n"
+"من تاکنون مهارتهای مختلفی یاد گرفته ام که شما با بررسی این وبسایت  و کلیک "
+"روی\n"
 "<a href=\"%(path)s\">Skills</a>\n"
 "می توانید به لیستی از آنها دسترسی داشته باشید.\n"
 "<br><br>\n"
-"همچنین در گیت هاب و استک اور فلو فعالیت دارم و در صفحه اصلی به این اکانت ها لینک هایی داده شده است "
+"همچنین در گیت هاب و استک اور فلو فعالیت دارم و در صفحه اصلی به این اکانت ها "
+"لینک هایی داده شده است "
 
 #: .\templates\app\contact.html:17
 msgid "Hi,"
@@ -99,7 +104,7 @@ msgstr "تماس بگیری و من در اینجا میخام بگم:"
 msgid "Thank You"
 msgstr "متشکرم"
 
-#: .\templates\app\contact.html:43
+#: .\templates\app\contact.html:44
 msgid "Send"
 msgstr "ارسال"
 
@@ -143,9 +148,13 @@ msgstr "درباره من"
 msgid "Eisa Nahardani"
 msgstr "عیسی نهاردانی"
 
+#: .\templates\app\project_card.html:26
+msgid "Publication Date"
+msgstr "تاریخ انتشار"
+
 #: .\templates\app\project_card.html:30
 msgid "Coming soon.."
-msgstr "در حال ساخت..."
+msgstr "...در حال ساخت"
 
 #: .\templates\app\projects.html:18
 msgid "Apps"
@@ -158,3 +167,16 @@ msgstr "مقاله ها"
 #: .\templates\app\projects.html:24
 msgid "Libraries"
 msgstr "کتابخانه ها"
+
+#: .\templates\parler\deletion_not_allowed.html:5
+#, python-format
+msgid ""
+"Deletion of the %(language_name)s translation of %(object_name)s "
+"'%(escaped_object)s' is not allowed, because it is the last available "
+"translation of this instance."
+msgstr ""
+
+#: .\templates\parler\language_tabs.html:15
+#: .\templates\parler\language_tabs.html:17
+msgid "Delete Translation"
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 23:05+0330\n"
+"POT-Creation-Date: 2022-02-24 06:14+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\eisa\settings.py:133
+#: .\eisa\settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\eisa\settings.py:134
+#: .\eisa\settings.py:140
 msgid "Spanish"
 msgstr ""
 
-#: .\eisa\settings.py:135
+#: .\eisa\settings.py:141
 msgid "German"
 msgstr ""
 
-#: .\eisa\settings.py:136
+#: .\eisa\settings.py:142
 msgid "Persian"
 msgstr ""
 
-#: .\templates\_base.html:92
+#: .\templates\_base.html:94
 msgid "Click on the links on the rigth to see other languages"
 msgstr ""
 
-#: .\templates\_base.html:106
+#: .\templates\_base.html:108
 msgid "Home"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Thank You"
 msgstr ""
 
-#: .\templates\app\contact.html:43
+#: .\templates\app\contact.html:44
 msgid "Send"
 msgstr ""
 
@@ -134,6 +134,10 @@ msgstr ""
 msgid "Eisa Nahardani"
 msgstr ""
 
+#: .\templates\app\project_card.html:26
+msgid "Publication Date"
+msgstr ""
+
 #: .\templates\app\project_card.html:30
 msgid "Coming soon.."
 msgstr ""
@@ -148,4 +152,17 @@ msgstr ""
 
 #: .\templates\app\projects.html:24
 msgid "Libraries"
+msgstr ""
+
+#: .\templates\parler\deletion_not_allowed.html:5
+#, python-format
+msgid ""
+"Deletion of the %(language_name)s translation of %(object_name)s "
+"'%(escaped_object)s' is not allowed, because it is the last available "
+"translation of this instance."
+msgstr ""
+
+#: .\templates\parler\language_tabs.html:15
+#: .\templates\parler\language_tabs.html:17
+msgid "Delete Translation"
 msgstr ""

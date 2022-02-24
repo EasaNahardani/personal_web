@@ -22,7 +22,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns=[
     path('rosetta/', include('rosetta.urls')),
-    path('admin/', admin.site.urls),
+    path(settings.ADMIN_URL, admin.site.urls),
 ]
 
 urlpatterns += i18n_patterns(

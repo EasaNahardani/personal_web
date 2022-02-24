@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import activate
 from parler.admin import TranslatableAdmin
 from .models import Skill, ContactMessage, Library, Article, Application, Image
 from .forms import ArticleForm, ApplicationForm, LibraryForm
@@ -83,8 +84,9 @@ class ApplicationAdmin(ProjectAdmin):
             return ApplicationForm
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
+        lang = request.GET.get('language', 'en')
         extra_context = extra_context or {}
-        app = Application.objects.get(id=object_id)
+        app = Application.objects.language(lang).get(id=object_id)
         extra_context["form"] = self.get_form(request, instance=app)
 
         return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)

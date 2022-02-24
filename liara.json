@@ -1,4 +1,11 @@
 {
   "platform": "django",
-  "app": "eisa-nhr"
+  "app": "eisa-nhr",
+  "disks":[
+    {
+      "name": "files",
+      "mountTo": "media"
+    }
+  ]
+
 }

@@ -23,7 +23,7 @@
     <div class="card-footer">
       {% if p.status == 'published' %}
       <div class="publish">
-        <span>published at</span>
+        <span>{% translate 'Publication Date' %}</span>
         <span class="date">{{p.publish|date:"Y F"}}</span>
       </div>
       {% else %}

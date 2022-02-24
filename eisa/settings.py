@@ -23,12 +23,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l_ptb2e%*gl$1i9a8y9448xfw+-7*_!i35e9@na51d)9*kt(za'
+default_key = 'django-insecure-l_ptb2e%*gl$1i9a8y9448xfw+-7*_!i35e9@na51d)9*kt(za'
+SECRET_KEY = env("DJANGO_SECRET_KEY", default=default_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = ['*']
+
+if DEBUG:
+    # If Debug is True, allow all.
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.ir'])
 
 
 # Application definition
@@ -96,12 +102,9 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 ENGINE = env("SQL_ENGINE", "django.db.backends.sqlite3")
 NAME = env("SQL_DATABASE", BASE_DIR/ "db.sqlite3")
-USER = env("SQL_USER", "test")
-PASSWORD = env("SQL_PASSWORD", "test")
-HOST = env("SQL_HOST", "localhost")
-PORT = env("SQL_PORT", "5432")
+
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL", default=f"postgres://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}")
+    "default": env.dj_db_url("DATABASE_URL", default=f"sqlite:///{NAME}")
 }
 
 ###############################################################################
@@ -179,6 +182,13 @@ PARLER_LANGUAGES = {
 ###############################################################################
 # login page  for translators - default is LOGIN_URL
 ROSETTA_LOGIN_URL = ''
+###############################################################################
+#                                Admin                                        #
+###############################################################################
+# Admin URL Definition
+ADMIN_URL = env('DJANGO_ADMIN_URL', 'admin/')
+
+
 ###############################################################################
 #                          Media & Static                                     #
 ###############################################################################

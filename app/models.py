@@ -14,8 +14,8 @@ from .validators import PhoneNumberValidator
 
 
 def get_image_filename(instance, filename):
-    name = instance.project.title
-    return "project_images/%s/%s" % (name, filename)
+    pk = instance.project.pk
+    return "project_images/%d/%s" % (pk, filename)
 
 
 
@@ -83,19 +83,19 @@ class Article(Project):
 
 
 class Application(Project):
+    technologies = models.TextField()
     translations = AllTranslatedFields(
         title=models.CharField(max_length=250),
         language = models.CharField(max_length=250),
     )
-    technologies = models.TextField(),
 
 
 class Library(Project):
+    technologies = models.TextField()
     translations = AllTranslatedFields(
         title=models.CharField(max_length=250),
         language = models.CharField(max_length=250),
     )
-    technologies = models.TextField(),
 
     class Meta:
         verbose_name = 'Library'

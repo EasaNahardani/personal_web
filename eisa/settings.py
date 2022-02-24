@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from environs import Env
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,16 +92,18 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 #                                Databases                                    #
 ###############################################################################
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+ENGINE = env("SQL_ENGINE", "django.db.backends.sqlite3")
+NAME = env("SQL_DATABASE", BASE_DIR/ "db.sqlite3")
+USER = env("SQL_USER", "test")
+PASSWORD = env("SQL_PASSWORD", "test")
+HOST = env("SQL_HOST", "localhost")
+PORT = env("SQL_PORT", "5432")
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": env.dj_db_url("DATABASE_URL", default=f"postgres://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}")
 }
+
 ###############################################################################
 #                                 Authentications                             #
 ###############################################################################

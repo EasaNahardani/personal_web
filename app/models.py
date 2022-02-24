@@ -14,8 +14,8 @@ from .validators import PhoneNumberValidator
 
 
 def get_image_filename(instance, filename):
-    slug = instance.project.slug
-    return "project_images/%s/%s" % (slug, filename)
+    name = instance.project.title
+    return "project_images/%s/%s" % (name, filename)
 
 
 
@@ -56,7 +56,6 @@ class Project(TranslatableModelMixin, models.Model):# if this inherit Translatab
     #    ('library', 'Library'),
     #)
     url = models.URLField(blank=True)
-    slug = models.SlugField(max_length=250, unique=True, allow_unicode=True) # remove
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
@@ -78,25 +77,25 @@ class Project(TranslatableModelMixin, models.Model):# if this inherit Translatab
 
 class Article(Project):
     translations = AllTranslatedFields(
+        title=models.CharField(max_length=250),
         description = models.TextField(),
-        title=models.CharField(max_length=250)
     )
 
 
 class Application(Project):
     translations = AllTranslatedFields(
-        language = models.CharField(max_length=250),
-        technologies = models.TextField(),           # out of translating
         title=models.CharField(max_length=250),
+        language = models.CharField(max_length=250),
     )
+    technologies = models.TextField(),
 
 
 class Library(Project):
     translations = AllTranslatedFields(
-        language = models.CharField(max_length=250),
-        technologies = models.TextField(),            # out of translating
         title=models.CharField(max_length=250),
+        language = models.CharField(max_length=250),
     )
+    technologies = models.TextField(),
 
     class Meta:
         verbose_name = 'Library'

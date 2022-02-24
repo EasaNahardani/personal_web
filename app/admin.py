@@ -35,8 +35,8 @@ class ProjectAdmin(TranslatableAdmin):
     add_form_template = 'parler/change_form.html'
     change_form_template = 'parler/change_form.html'
 
-    def get_prepopulated_fields(self, request, obj=None):
-        return {'slug': ('title',)}
+    #def get_prepopulated_fields(self, request, obj=None):
+    #    return {'slug': ('title',)}
 
     def add_view(self, request, form_url="", extra_context=None):
         extra_context = extra_context or {}

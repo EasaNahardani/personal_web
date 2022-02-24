@@ -86,7 +86,12 @@ def projects(request):
                 projects = []
                 messages.info(request, _('No Articles!'))
         else:
-            projects = Library.objects.all() #prefetch_related('images')
+            objs = Library.objects
+            if objs.exists():
+                projects = objs.all() #prefetch_related('images')
+            else:
+                projects = []
+                messages.info(request, _('No Libraries!'))
     else:
         projects = Application.objects.all() #prefetch_related('images')
     return render(request, './app/projects.html', {'projects': projects})

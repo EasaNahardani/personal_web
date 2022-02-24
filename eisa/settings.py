@@ -27,7 +27,7 @@ default_key = 'django-insecure-l_ptb2e%*gl$1i9a8y9448xfw+-7*_!i35e9@na51d)9*kt(z
 SECRET_KEY = env("DJANGO_SECRET_KEY", default=default_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DJANGO_DEBUG", default=False)
+DEBUG = env.bool("DJANGO_DEBUG", default=True)
 
 
 if DEBUG:

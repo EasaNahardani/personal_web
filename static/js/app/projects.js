@@ -3,9 +3,23 @@ $(function() {
 const category_button = $('.category-wrapper .category');
 const project = $('.wrapper .proj .card-body');
 
-category_button.click(change_category);
 
+const language_code = location.pathname.substring(1, 3);
+
+if (language_code == 'fa') {
+  const carousel_number_link = $('.wrapper .proj .CSSgal .bullets a');
+  const e2p = s => s.replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+  carousel_number_link.each(function(index, element){
+    var image_number = $(element).text();
+    image_number = e2p(image_number);
+    $(element).text(image_number);
+  })
+}
+
+
+category_button.click(change_category);
 project.click(goToProject)
+
 
 function change_category(){
   const category = $(this).data('category');

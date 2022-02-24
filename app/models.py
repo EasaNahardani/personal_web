@@ -14,8 +14,9 @@ from .validators import PhoneNumberValidator
 
 
 def get_image_filename(instance, filename):
-    pk = instance.project.pk
-    return "project_images/%d/%s" % (pk, filename)
+    instance.project.set_current_language('en')
+    title = instance.project.title
+    return "project_images/%s/%s" % (title, filename)
 
 
 

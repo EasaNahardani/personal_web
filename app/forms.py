@@ -19,10 +19,12 @@ class ContactMessageForm(forms.ModelForm):
             'sender_phone': forms.TextInput(attrs={'placeholder':'',
                                                     'class': 'latter-control',
                                                     'autocomplete': 'off',
+                                                    'dir': 'ltr',
                                                 }),
             'sender_mail' : forms.EmailInput(attrs={'placeholder':'',
                                                     'class': 'latter-control',
                                                     'autocomplete': 'off',
+                                                    'dir': 'ltr',
                                                 }),
             'content' : forms.Textarea(attrs={'placeholder':'',
                                                     'class': 'latter-control',
@@ -77,6 +79,9 @@ class ProjectForm(TranslatableModelFormMixin, forms.ModelForm, metaclass=Transla
         initial = None
         if 'instance' in kwargs:
             if kwargs['instance'] is not None:
+                if hasattr(kwargs['instance'], 'language_code'):
+                    print(kwargs['instance'].language_code)
+                    print('^^^^^^')
                 initial = [img.image for img in kwargs['instance'].images.all()]
         self.fields['images_list'] = forms.FileField(required=False, widget=MyFileInput(imgs=initial, attrs={'multiple': True}), help_text='<br>maximum is 5 images')
             # Note :

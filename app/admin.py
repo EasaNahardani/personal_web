@@ -57,8 +57,6 @@ class ProjectAdmin(TranslatableAdmin):
 @admin.register(Article)
 class ArticleAdmin(ProjectAdmin):
     def get_form(self, request, obj=None, **kwargs):
-        print('get_form called')
-        print('*********')
         try:
             instance = kwargs['instance']
             return ArticleForm(instance=instance)
@@ -66,8 +64,9 @@ class ArticleAdmin(ProjectAdmin):
             return ArticleForm
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
+        lang = request.GET.get('language', 'en')
         extra_context = extra_context or {}
-        article = Article.objects.get(id=object_id)
+        article = Article.objects.language(lang).get(id=object_id)
         extra_context["form"] = self.get_form(request, instance=article)
         return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)
 
@@ -104,7 +103,8 @@ class LibraryAdmin(ProjectAdmin):
             return LibraryForm
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
+        lang = request.GET.get('language', 'en')
         extra_context = extra_context or {}
-        library = Library.objects.get(id=object_id)
+        library = Library.objects.language(lang).get(id=object_id)
         extra_context["form"] = self.get_form(request, instance=library)
         return super().change_view(request, object_id, form_url=form_url, extra_context=extra_context)

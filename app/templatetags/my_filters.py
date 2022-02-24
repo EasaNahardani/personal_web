@@ -7,6 +7,21 @@ from django.urls import translate_url
 register = template.Library()
 
 
+def get_digit(matchobj):
+    digit = matchobj.group(0) # The entire match - it is a string
+    d = int(digit)
+    return '۰۱۲۳۴۵۶۷۸۹'[d]
+
+
+@register.filter(name='e2p')
+def get_farsi_numbers(text):
+    if isinstance(text, int):
+        text = str(text)
+    elif not isinstance(text, str):
+        return text
+    return re.sub(r'\d', get_digit, text) # advanced version of replace()
+
+
 @register.filter(name='splitter')
 def get_technologies(s):
     return re.split('\s+', s)

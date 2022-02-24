@@ -20,14 +20,14 @@
           {{p.description|safe|truncatechars:200}}
         </div>
       {% endif %}
-    <div class="card-footer">
+    <div class="card-footer" {% if bidi %} dir="rtl" {% endif %}>
       {% if p.status == 'published' %}
       <div class="publish">
         <span>{% translate 'Publication Date' %}</span>
-        <span class="date">{{p.publish|date:"Y F"}}</span>
+        <span class="date" dir="ltr">{{p.publish|date:"Y F"}}</span>
       </div>
       {% else %}
-        <span class="soon">{% translate 'Coming soon..' %}</span>
+        <span class="soon" dir="ltr">{% translate 'Coming soon..' %}</span>
       {% endif %}
     </div>
   </div>

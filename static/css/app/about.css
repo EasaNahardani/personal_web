@@ -2,6 +2,7 @@
   margin-top: 100px;
 }
 .wrapper h1{
+  user-select: none;
 text-align: center;
 }
 .wrapper .bio{

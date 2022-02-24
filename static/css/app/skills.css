@@ -3,6 +3,7 @@
 }
 .wrapper h1{
 text-align: center;
+user-select: none;
 }
 .wrapper .progresses{
   line-height: 2rem;

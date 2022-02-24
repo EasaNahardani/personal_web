@@ -1,5 +1,6 @@
 .wrapper h1{
   text-align: center;
+  user-select: none;
 }
 .wrapper{
   padding-left: 80px;

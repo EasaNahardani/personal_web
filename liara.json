@@ -1,11 +1,13 @@
 {
   "platform": "django",
   "app": "eisa-nhr",
-  "disks":[
+  "disks": [
     {
       "name": "files",
       "mountTo": "media"
     }
-  ]
-
+  ],
+  "django": {
+    "pythonVersion": "3.8"
+  }
 }

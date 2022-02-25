@@ -54,6 +54,7 @@ html , body {
   color: #6b4334;
   text-decoration: none;
   z-index: 50;
+  user-select: none;
 }
 
 .back-btn:hover a{

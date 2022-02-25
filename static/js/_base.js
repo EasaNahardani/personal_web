@@ -68,7 +68,7 @@ function check_to_fading() {
 if (alert.length) {
   setTimeout(function() {
     check_to_fading();
-  }, 4000)
+  }, 2500)
 }
 
 

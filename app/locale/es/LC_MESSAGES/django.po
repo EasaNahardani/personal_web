@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 06:14+0330\n"
+"POT-Creation-Date: 2022-02-25 00:33+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\app\models.py:126
+#: .\app\models.py:127
 msgid "Email Address"
 msgstr ""
 
-#: .\app\models.py:128
+#: .\app\models.py:129
 msgid "A user with that email already exists."
 msgstr ""
 
-#: .\app\models.py:132
+#: .\app\models.py:133
 msgid "Phone Number"
 msgstr ""
 
-#: .\app\models.py:147
+#: .\app\models.py:148
 msgid ""
 "Both this field and phone number can not be blank.please fill one of them"
 msgstr ""
 
-#: .\app\models.py:148
+#: .\app\models.py:149
 msgid "Both this field and email can not be blank.please fill one of them."
 msgstr ""
 
@@ -77,6 +77,10 @@ msgstr ""
 
 #: .\app\views.py:87
 msgid "No Articles!"
+msgstr ""
+
+#: .\app\views.py:94
+msgid "No Libraries!"
 msgstr ""
 
 #: .\app\widgets.py:7

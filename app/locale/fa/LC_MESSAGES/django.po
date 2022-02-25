@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 06:14+0330\n"
+"POT-Creation-Date: 2022-02-25 00:33+0330\n"
 "PO-Revision-Date: 2022-02-23 02:06+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,24 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: .\app\models.py:126
+#: .\app\models.py:127
 msgid "Email Address"
 msgstr ""
 
-#: .\app\models.py:128
+#: .\app\models.py:129
 msgid "A user with that email already exists."
 msgstr ""
 
-#: .\app\models.py:132
+#: .\app\models.py:133
 msgid "Phone Number"
 msgstr ""
 
-#: .\app\models.py:147
+#: .\app\models.py:148
 msgid ""
 "Both this field and phone number can not be blank.please fill one of them"
 msgstr ""
 
-#: .\app\models.py:148
+#: .\app\models.py:149
 msgid "Both this field and email can not be blank.please fill one of them."
 msgstr ""
 
@@ -79,6 +79,10 @@ msgstr "خطایی در ارسال فرم رخ داد! لطفا فیلد ها ر
 #: .\app\views.py:87
 msgid "No Articles!"
 msgstr "در حال  حاضر هیچ مقاله ای وجود ندارد"
+
+#: .\app\views.py:94
+msgid "No Libraries!"
+msgstr "در حال حاضر کتابخانه یا پکیجی اضافه نشده است"
 
 #: .\app\widgets.py:7
 msgid "Clear"

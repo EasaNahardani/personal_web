@@ -69,7 +69,7 @@
 
 </head>
 {% with current_lang=request.LANGUAGE_CODE %}
-<body  {% if current_lang == 'fa' %} style="font-family:fadigits, sans;" {% endif %}>
+<body  {% if current_lang == 'fa' %} style="font-family:fadigits, sans;"{% elif current_lang == 'de' %}style='font-family:"Walbaum-Bold";'{% else %}style="font-family:cursive;"{% endif %}>
 
   {% if messages %}
     <ul class="messages">

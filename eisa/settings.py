@@ -27,7 +27,7 @@ default_key = 'django-insecure-l_ptb2e%*gl$1i9a8y9448xfw+-7*_!i35e9@na51d)9*kt(z
 SECRET_KEY = env("DJANGO_SECRET_KEY", default=default_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DJANGO_DEBUG", default=True)
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
 
 if DEBUG:
@@ -222,7 +222,12 @@ MESSAGE_TAGS = {
 ###############################################################################
 #                             Security & deployment                           #
 ###############################################################################
-# security
+SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+SECURE_HSTS_SECONDS = env.int("DJANGO_SECURE_HSTS_SECONDS", default=1296000) # 15 days
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
+SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
+SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
+CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
 ###############################################################################
 #                                                                            #
 ###############################################################################

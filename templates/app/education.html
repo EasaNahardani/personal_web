@@ -3,7 +3,7 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/app/education.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/education.min.css' %}">
 {% endblock css %}
 
 
@@ -13,13 +13,17 @@
   <h1>{% translate 'Education' %}</h1>
   <h3>{% translate 'University' %}</h3>
   <div class=" education University">
-    <span>{% translate 'Hakim Sabzevar University (2012-2016)' %}</span>
-    <img class="anabin" title="this image be derived of anabin.kmk.org " src="{% static 'img/anabin-en-univ.PNG' %}" alt="derived of anabin.kmk.org">
+    <span>{% translate 'Hakim Sabzevari University (2012-2016)' %}</span>
+    <img class="anabin" title="this image be derived of anabin.kmk.org "
+       src="{% if request.LANGUAGE_CODE == 'de' %}{% static 'img/anabin-de-univ-watermarked.png' %}{% else %}{% static 'img/anabin-en-univ-watermarked.png' %}{% endif %}"
+       alt="derived of anabin.kmk.org">
   </div>
   <h3>{% translate 'Field and Degree' %}</h3>
   <div class="education field">
     <span>  {% translate 'Bachelor in Electrical Engineeing' %}</span>
-    <img class="anabin" title="this image be derived of anabin.kmk.org " src="{% static 'img/anabin-en.PNG' %}" alt="this image be derived of anabin.kmk.org">
+    <img class="anabin" title="this image be derived of anabin.kmk.org "
+      alt="this image be derived of anabin.kmk.org"
+      src="{% if request.LANGUAGE_CODE == 'de' %}{% static 'img/anabin-de-watermark.png' %}{% else %}{% static 'img/anabin-en-watermarked.png' %}{% endif %}">
   </div>
 </div>
 

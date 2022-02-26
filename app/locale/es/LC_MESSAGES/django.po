@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 00:33+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-02-26 00:21+0330\n"
+"PO-Revision-Date: 2022-02-25 22:43+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\app\models.py:127
 msgid "Email Address"
@@ -41,23 +42,23 @@ msgstr ""
 
 #: .\app\urls.py:9
 msgid "contact/"
-msgstr ""
+msgstr "Contacto/"
 
 #: .\app\urls.py:10
 msgid "about/"
-msgstr ""
+msgstr "Información/"
 
 #: .\app\urls.py:11
 msgid "education/"
-msgstr ""
+msgstr "educación/"
 
 #: .\app\urls.py:12
 msgid "skills/"
-msgstr ""
+msgstr "habilidades/"
 
 #: .\app\urls.py:13
 msgid "projects/"
-msgstr ""
+msgstr "proyectos/"
 
 #: .\app\views.py:18
 msgid "check me  here"

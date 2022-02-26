@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 00:33+0330\n"
+"POT-Creation-Date: 2022-02-26 00:21+0330\n"
 "PO-Revision-Date: 2022-02-23 04:43+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,7 +117,9 @@ msgid "University"
 msgstr "دانشگاه"
 
 #: .\templates\app\education.html:16
-msgid "Hakim Sabzevar University (2012-2016)"
+#, fuzzy
+#| msgid "Hakim Sabzevar University (2012-2016)"
+msgid "Hakim Sabzevari University (2012-2016)"
 msgstr "دانشگاه سراسری حکیم سبزواری(1391-1395)"
 
 #: .\templates\app\education.html:19

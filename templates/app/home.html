@@ -3,7 +3,7 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/app/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/home.min.css' %}">
 {% endblock css %}
 
 
@@ -47,8 +47,16 @@
     <div class="social-buttons">
       <a href="https://github.com/EasaNahardani" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://stackoverflow.com/users/18005739/eisa-nahardani?tab=profile" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-      <a href="" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="{% url 'app:contact' %}" ><i class="fa fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/eisa-nahardani" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=92developer92@gmail.com" target="_blank"><i>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 25 25" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:#4a5073;fill-opacity:1;" d="M 10.84375 0.121094 C 6.773438 0.632812 2.914062 3.480469 1.167969 7.261719 C -0.34375 10.53125 -0.34375 14.492188 1.167969 17.761719 C 2.324219 20.25 4.59375 22.566406 7.0625 23.742188 C 11.230469 25.746094 16.238281 25.300781 19.863281 22.597656 C 26.199219 17.871094 26.769531 8.863281 21.0625 3.449219 C 18.304688 0.824219 14.679688 -0.355469 10.84375 0.121094 Z M 18.605469 8.140625 C 18.785156 8.363281 18.792969 8.683594 18.773438 12.644531 L 18.738281 16.925781 L 18.472656 17.136719 C 18.273438 17.304688 18.070312 17.347656 17.695312 17.328125 L 17.183594 17.292969 L 17.125 13.769531 L 17.070312 10.253906 L 15.515625 11.386719 C 14.65625 12.011719 13.625 12.753906 13.222656 13.046875 L 12.476562 13.566406 L 10.1875 11.898438 C 8.929688 10.976562 7.875 10.230469 7.839844 10.230469 C 7.808594 10.230469 7.785156 11.832031 7.785156 13.789062 L 7.785156 17.347656 L 7.285156 17.347656 C 6.894531 17.347656 6.707031 17.28125 6.503906 17.070312 L 6.226562 16.804688 L 6.226562 12.644531 C 6.226562 8.597656 6.238281 8.472656 6.460938 8.183594 C 6.894531 7.628906 7.140625 7.738281 9.71875 9.609375 C 11.011719 10.542969 12.175781 11.375 12.300781 11.453125 C 12.523438 11.589844 12.710938 11.476562 14.800781 9.953125 C 16.046875 9.042969 17.238281 8.183594 17.460938 8.039062 C 17.90625 7.730469 18.292969 7.773438 18.605469 8.140625 Z M 18.605469 8.140625 "/>
+</g>
+</svg>
+</i>
+</a>
     </div>
   </div>
 

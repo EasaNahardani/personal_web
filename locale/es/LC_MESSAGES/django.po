@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 00:33+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-02-26 00:21+0330\n"
+"PO-Revision-Date: 2022-02-25 23:11+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\eisa\settings.py:142
 msgid "English"
@@ -36,15 +37,15 @@ msgstr ""
 
 #: .\templates\_base.html:94
 msgid "Click on the links on the rigth to see other languages"
-msgstr ""
+msgstr "Haga clic en los enlaces de la derecha para ver otros idiomas"
 
 #: .\templates\_base.html:108
 msgid "Home"
-msgstr ""
+msgstr "Casa"
 
 #: .\templates\app\about.html:13
 msgid "About Me"
-msgstr ""
+msgstr "Acerca mí"
 
 #: .\templates\app\about.html:16
 #, python-format
@@ -96,19 +97,19 @@ msgstr ""
 
 #: .\templates\app\education.html:13 .\templates\app\home.html:19
 msgid "Education"
-msgstr ""
+msgstr "Educación"
 
 #: .\templates\app\education.html:14
 msgid "University"
-msgstr ""
+msgstr "Universidad"
 
 #: .\templates\app\education.html:16
-msgid "Hakim Sabzevar University (2012-2016)"
+msgid "Hakim Sabzevari University (2012-2016)"
 msgstr ""
 
 #: .\templates\app\education.html:19
 msgid "Field and Degree"
-msgstr ""
+msgstr "Campo y Grado"
 
 #: .\templates\app\education.html:21
 msgid "Bachelor in Electrical Engineeing"
@@ -116,19 +117,19 @@ msgstr ""
 
 #: .\templates\app\home.html:16
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: .\templates\app\home.html:24 .\templates\app\skills.html:13
 msgid "Skills"
-msgstr ""
+msgstr "Habilidades"
 
 #: .\templates\app\home.html:28 .\templates\app\projects.html:14
 msgid "Projects"
-msgstr ""
+msgstr "Proyectos"
 
 #: .\templates\app\home.html:31
 msgid "About me"
-msgstr ""
+msgstr "Acerca mí"
 
 #: .\templates\app\home.html:43
 msgid "Eisa Nahardani"
@@ -136,7 +137,7 @@ msgstr ""
 
 #: .\templates\app\project_card.html:26
 msgid "Publication Date"
-msgstr ""
+msgstr "Fecha de publicación"
 
 #: .\templates\app\project_card.html:30
 msgid "Coming soon.."
@@ -144,15 +145,15 @@ msgstr ""
 
 #: .\templates\app\projects.html:18
 msgid "Apps"
-msgstr ""
+msgstr "App"
 
 #: .\templates\app\projects.html:21
 msgid "Articles"
-msgstr ""
+msgstr "Artículo"
 
 #: .\templates\app\projects.html:24
 msgid "Libraries"
-msgstr ""
+msgstr "Biblioteca"
 
 #: .\templates\parler\deletion_not_allowed.html:5
 #, python-format

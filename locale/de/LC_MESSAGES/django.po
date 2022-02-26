@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 00:33+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-02-26 00:21+0330\n"
+"PO-Revision-Date: 2022-02-26 00:21+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\eisa\settings.py:142
 msgid "English"
@@ -40,11 +41,11 @@ msgstr ""
 
 #: .\templates\_base.html:108
 msgid "Home"
-msgstr ""
+msgstr "Zuhause"
 
 #: .\templates\app\about.html:13
 msgid "About Me"
-msgstr ""
+msgstr "Über mich"
 
 #: .\templates\app\about.html:16
 #, python-format
@@ -52,15 +53,11 @@ msgid ""
 "\n"
 "     Hello, nice to meet you!\n"
 "     <br><br>\n"
-"    Let me tell you a little about my story. I am from Iran, a South-Asia "
-"country that is going through a tough time.\n"
+"    Let me tell you a little about my story. I am from Iran, a South-Asia country that is going through a tough time.\n"
 "    <br>I have have learned different skills you can check by clicking on\n"
 "    <a href=\"%(path)s\">Skills</a> link.\n"
-"      I love programming, it is amazing to me how I am able to transform "
-"abstract ideas\n"
-"     into software, making the complex simple .I can take care of all your "
-"web development stuff and enjoy sharing my knowledge as well as creating and "
-"innovating.\n"
+"      I love programming, it is amazing to me how I am able to transform abstract ideas\n"
+"     into software, making the complex simple .I can take care of all your web development stuff and enjoy sharing my knowledge as well as creating and innovating.\n"
 "     <br><br>\n"
 "     Now just keep clicking, and get to know me better as you go!\n"
 "     "
@@ -96,39 +93,39 @@ msgstr ""
 
 #: .\templates\app\education.html:13 .\templates\app\home.html:19
 msgid "Education"
-msgstr ""
+msgstr "Bildung"
 
 #: .\templates\app\education.html:14
 msgid "University"
-msgstr ""
+msgstr "Universität"
 
 #: .\templates\app\education.html:16
-msgid "Hakim Sabzevar University (2012-2016)"
-msgstr ""
+msgid "Hakim Sabzevari University (2012-2016)"
+msgstr "Universität Hakim Sabzewari(2012-2016)"
 
 #: .\templates\app\education.html:19
 msgid "Field and Degree"
-msgstr ""
+msgstr "Abschlusstyp und Studienrichtung "
 
 #: .\templates\app\education.html:21
 msgid "Bachelor in Electrical Engineeing"
-msgstr ""
+msgstr "Bachelor im Fach Elektroingenieurwesen"
 
 #: .\templates\app\home.html:16
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: .\templates\app\home.html:24 .\templates\app\skills.html:13
 msgid "Skills"
-msgstr ""
+msgstr "Fähigkeiten"
 
 #: .\templates\app\home.html:28 .\templates\app\projects.html:14
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: .\templates\app\home.html:31
 msgid "About me"
-msgstr ""
+msgstr "Über mich"
 
 #: .\templates\app\home.html:43
 msgid "Eisa Nahardani"
@@ -144,15 +141,15 @@ msgstr ""
 
 #: .\templates\app\projects.html:18
 msgid "Apps"
-msgstr ""
+msgstr "App"
 
 #: .\templates\app\projects.html:21
 msgid "Articles"
-msgstr ""
+msgstr "Artikel"
 
 #: .\templates\app\projects.html:24
 msgid "Libraries"
-msgstr ""
+msgstr "Bücherei"
 
 #: .\templates\parler\deletion_not_allowed.html:5
 #, python-format
